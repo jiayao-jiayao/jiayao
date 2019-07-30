@@ -1,0 +1,18 @@
+
+server:
+  port: 10040
+spring:
+  application:
+    name: event-client
+  datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://rm-2zeefa0w5l6z9s8jyto.mysql.rds.aliyuncs.com:3306/restrant?characterEncoding=utf-8&serverTimezone=UTC
+      username: iqiq
+      password: GuoQi1202!
+      type: com.alibaba.druid.pool.DruidDataSource
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9090/eureka/
+mybatis:
+  mapper-locations: classpath:mapping/*.xml

@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <modules>
+        <module>day0730_eventclient10040</module>
         <module>day0730_springcloud_eurekaserver9090</module>
         <module>day0730_springcloud_eurekaclient10000</module>
         <module>day0730_springcloud_eurekazuul10010</module>

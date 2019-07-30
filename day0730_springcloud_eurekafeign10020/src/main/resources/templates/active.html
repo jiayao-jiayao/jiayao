@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Blog</title>
+<title>活动列表</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -60,7 +60,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li class="hvr-bounce-to-bottom"><a href="about">About</a></li>
 							<li class="hvr-bounce-to-bottom"><a href="menu">菜系</a></li>
 							<li class="hvr-bounce-to-bottom"><a href="diandan">我的订单</a></li>
-							<li class="hvr-bounce-to-bottom"><a href="active">活动</a></li>
+							<li class="hvr-bounce-to-bottom"><a href="/active">活动</a></li>
 							<li class="hvr-bounce-to-bottom"><a href="contact">登录</a></li>
 						</ul>
 					</div><!-- /navbar-collapse -->
@@ -72,68 +72,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- blog -->
 	<div class="blog-page">
 		<div class="container">
-			<div class="blog-pag">
+			<div class="blog-pag" th:each="event:${events}">
 				<div class="blog-page-grids">
 				</div>
 				<div class="blog-page-grids-bottom">
 					<div class="blog-page-grids-bot">
-						<a href="single.html"><img src="http://www.qnct.net/upload/img/p/1906-019800.jpg" alt=" 6.1我们一起重返童年，寻找 “我爱的味道”" class="img-responsive" /></a>
+						<a href="single.html"><img th:src="${event.eventPhoto}" src="" class="img-responsive" /></a>
 					</div>
 					<div class="blog-page-grids-bot1" >
-						<h4><a> 6.1我们一起重返童年，寻找 “我爱的味道”</a></h4>
+						<h4 th:text="${event.eventTitle}"><a> 标题</a></h4>
 						<p></p>
 
 						<div class="more">
-							<a href="acdetal">查看详情</a>
+							<a href="" th:href="('/acdetal'+${event.eventId})">查看详情</a>
 						</div>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
 			</div>
-			<div class="blog-pag">
-				<div class="blog-page-grids">
-				</div>
-				<div class="blog-page-grids-bottom">
-					<div class="blog-page-grids-bot">
-						<a href="single.html"><img src="http://www.qnct.net/upload/img/p/1906-302388.jpg" alt="青年人向建党98周年光辉岁月致敬 " class="img-responsive" /></a>
-					</div>
-					<div class="blog-page-grids-bot1">
-						<h4><a>青年人向建党98周年光辉岁月致敬</a></h4>
-						<p></p>
-						<div class="more">
-							<a href="single.html">查看详情</a>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-			<div class="blog-pag">
-				<div class="blog-page-grids">
-					<div class="clearfix"> </div>
-				</div>
-				<div class="blog-page-grids-bottom">
-					<div class="blog-page-grids-bot">
-						<a href="single.html"><img src="http://www.qnct.net/upload/img/p/1905-089405.jpg" alt="新菜| 4.26 鲜菜苔上市，带您找回儿时的味道... " class="img-responsive" /></a>
-					</div>
-					<div class="blog-page-grids-bot1">
-						<h4><a>新菜| 4.26 鲜菜苔上市，带您找回儿时的味道...</a></h4>
-						<p></p>
-						<div class="more">
-							<a href="single.html">查看详情</a>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
+
 			<nav>
 				<ul class="pagination blg-pg">
-					<li><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+					<li><a aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+					<li class="page"><a>1</a></li>
+					<!--<li><a href="/active">1</a></li>-->
+					<li class="page"><a>2</a></li>
+					<li class="page"><a>3</a></li>
+					<li class="page"><a>4</a></li>
+					<li class="page"><a>5</a></li>
+					<li><a aria-label="Next"><span aria-hidden="true">»</span></a></li>
 				</ul>
 			 </nav>
 		</div>
@@ -179,12 +146,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 	<div class="clear"> </div>
-	<div class="copy-right">
-		<p>Copyright &copy; 2015.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
-	</div>
+
 <!--- //footer --->
 <!-- for bootstrap working -->
 		<script src="js/bootstrap.js"> </script>
 <!-- //for bootstrap working -->
+<script type="text/javascript">
+	$(".page").on('click',function(){
+			alert(this.innerText);
+			var page=this.innerText;
+			$.ajax({
+				url: "/active",
+				type: "GET",
+				data:{page:page},
+				success:function (msg) {
+
+                }
+
+			})
+	});
+</script>
 </body>
+
 </html>

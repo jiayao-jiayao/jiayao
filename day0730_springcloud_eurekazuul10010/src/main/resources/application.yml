@@ -16,6 +16,9 @@ zuul:
     api-b:
       path: /api-b/*
       serviceId: login-client
+    api-c:
+      path: /api-c/*
+      serviceId: event-client
   host:
     connect-timeout-millis: 60000
     socket-timeout-millis: 60000

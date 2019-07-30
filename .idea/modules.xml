@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/day0730_eventclient10040/day0730_eventclient10040.iml" filepath="$PROJECT_DIR$/day0730_eventclient10040/day0730_eventclient10040.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day0730_jiayao.iml" filepath="$PROJECT_DIR$/day0730_jiayao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day0730_springcloud_eurekaclient10000/day0730_springcloud_eurekaclient10000.iml" filepath="$PROJECT_DIR$/day0730_springcloud_eurekaclient10000/day0730_springcloud_eurekaclient10000.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day0730_springcloud_eurekafeign10020/day0730_springcloud_eurekafeign10020.iml" filepath="$PROJECT_DIR$/day0730_springcloud_eurekafeign10020/day0730_springcloud_eurekafeign10020.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day0730_springcloud_eurekaserver9090/day0730_springcloud_eurekaserver9090.iml" filepath="$PROJECT_DIR$/day0730_springcloud_eurekaserver9090/day0730_springcloud_eurekaserver9090.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day0730_springcloud_eurekazuul10010/day0730_springcloud_eurekazuul10010.iml" filepath="$PROJECT_DIR$/day0730_springcloud_eurekazuul10010/day0730_springcloud_eurekazuul10010.iml" />
+      <module fileurl="file://$PROJECT_DIR$/j1902_pojo/j1902_pojo.iml" filepath="$PROJECT_DIR$/j1902_pojo/j1902_pojo.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,5 +1,6 @@
 package com.qf.j1902.controller;
 
+import com.aliyuncs.dysmsapi.model.v20170525.SendSmsResponse;
 import com.aliyuncs.exceptions.ClientException;
 import com.qf.j1902.pojo.User;
 import com.qf.j1902.service.UserService;
@@ -29,14 +30,18 @@ public class LoginController {
     public  String DengluView(UserVo userVo , Model model){
         User user = userService.getUsersByName(userVo.getUsername());
         System.out.println(user.getLoginName());
-        if (user!=null){
-            if (user.getLoginPwd().equals(userVo.getPassword())){
+        if (user != null){//查到用户信息
+            if (user.getLoginPwd().equals(userVo.getPassword())){//用户名和密码正确
                 model.addAttribute("user",user);
                 return "success";
+            }else {//密码错误
+                return "用户名或密码错误";
             }
+        }else{//没有查询到用户的信息
 
+            return "用户名或密码错误！";
         }
-        return "notfound";
+
     }
 
     @RequestMapping(value = "/userreg",method = RequestMethod.POST)
@@ -48,7 +53,7 @@ public class LoginController {
 //       System.out.println("reg:"+regUser.getYzCode());
 // 判断输入框验证码是否正确
 
-        if (code.equals(regUser.getYzCode())){
+        if (code.equals(regUser.getYzCode())){//验证码正确，进行添加操作
             User u = new User();
             u.setLoginName(regUser.getLoginName());
             u.setLoginPwd(regUser.getLoginPwd());
@@ -59,10 +64,16 @@ public class LoginController {
             u.setHead("img/cbkmz.png");
 //            调用service业务接口注册在数据库中
             boolean b = userService.addUser(u);
-            System.out.println(b);
+            System.out.println("添加操作是否成功："+b);
+            if (b){
+                return "添加成功";
+            }else {
+                return "添加失败";
+            }
+        }else {//验证码错误
+            return "验证码有误，请重新填写！";
         }
 
-        return "success";
     }
 
     @RequestMapping(value = "reg2",method = RequestMethod.POST)
@@ -72,9 +83,13 @@ public class LoginController {
         Integer newcode= SmsUtil.setNewcode();
         session.setAttribute("code",newcode);
         String code = Integer.toString(newcode);
-        SmsUtil.sendSms(phone,code);
+        SendSmsResponse sendSms = SmsUtil.sendSms(phone, code);
+        if (sendSms.getCode() == "200"){
+            return "短信发送成功！";
+        }else {
+            return "短信发送失败!";
+        }
 
-        return "success";
     }
 
 }

@@ -2,26 +2,32 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="day0730_eventclient10040" />
         <module name="day0730_springcloud_eurekaclient" />
-        <module name="j1902_pojo" />
+        <module name="day0730_springcloud_eurekaclient10000" />
+        <module name="day0730_springcloud_eurekafeign10020" />
         <module name="day0730_springcloud_eurekaserver9090" />
         <module name="day0730_springcloud_eurekazuul" />
-        <module name="day0730_springcloud_eurekafeign10020" />
-        <module name="day0730_springcloud_loginclient10001" />
+        <module name="day0730_springcloud_eurekazuul10010" />
+        <module name="j1902_pojo" />
       </profile>
     </annotationProcessing>
-  </component>
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="day0730_springcloud_eurekaclient" options="-parameters" />
-      <module name="day0730_springcloud_eurekafeign10020" options="-parameters" />
-      <module name="day0730_springcloud_eurekaserver9090" options="-parameters" />
-      <module name="day0730_springcloud_eurekazuul" options="-parameters" />
-      <module name="day0730_springcloud_loginclient10001" options="-parameters" />
-    </option>
+    <bytecodeTargetLevel>
+      <module name="day0730_eventclient10040" target="1.8" />
+      <module name="day0730_jiayao" target="1.5" />
+      <module name="day0730_springcloud_eurekaclient" target="1.8" />
+      <module name="day0730_springcloud_eurekaclient10000" target="1.8" />
+      <module name="day0730_springcloud_eurekafeign10020" target="1.8" />
+      <module name="day0730_springcloud_eurekaserver9090" target="1.8" />
+      <module name="day0730_springcloud_eurekazuul" target="1.8" />
+      <module name="day0730_springcloud_eurekazuul10010" target="1.8" />
+      <module name="day0730_springcloud_loginclient10001" target="1.8" />
+      <module name="j1902_pojo" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>

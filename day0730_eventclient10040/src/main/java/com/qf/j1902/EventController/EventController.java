@@ -1,4 +1,4 @@
-package com.qf.j1902;
+package com.qf.j1902.EventController;
 
 import com.github.pagehelper.PageInfo;
 

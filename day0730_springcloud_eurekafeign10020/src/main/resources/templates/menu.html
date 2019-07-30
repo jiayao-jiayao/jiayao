@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>菜系简要</title>
+	<style type="text/css">
+
+	</style>
+<!--家肴菜单-->
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Pasta Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/caixistyle.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<!-- //js -->
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<link href='http://fonts.useso.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'/>
+</head>
+	
+<body>
+<!-- header -->
+	<div class="header">
+		<div class="container">
+			<div class="header-nav">
+				<nav class="navbar navbar-default">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					    <a class="navbar-brand" href="index"><i class="glyphicon glyphicon-cutlery" aria-hidden="true"></i><span>家</span>肴</a>
+					</div>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li class="hvr-bounce-to-bottom active"><a href="index">主页</a></li>
+							<li class="hvr-bounce-to-bottom"><a href="about">About</a></li>
+							<li class="hvr-bounce-to-bottom"><a href="menu">菜系</a></li>
+							<li class="hvr-bounce-to-bottom"><a href="diandan">我的订单</a></li>
+							<li class="hvr-bounce-to-bottom"><a href="active">活动</a></li>
+							<li class="hvr-bounce-to-bottom"><a href="contact">登录</a></li>
+						</ul>
+					</div><!-- /navbar-collapse -->
+				</nav>
+			</div>
+		</div>
+	</div>
+<!-- //header -->
+<!-- menu -->
+	<div class="menuche">
+		<div class="container">
+			<div class="menu1-left" th:each="mms:${ms}">
+				<div class="menu-left">
+					<a href="#"><img src="images/01.jpg" alt="" class="img-responsive" /></a>
+					<a href="#"><img src="images/02.jpg" alt="" class="img-responsive" /></a>
+				</div>
+				<div class="menu-right" th:id="${mms.seriesid}">
+					<h3><span th:text="${mms.seriesname}"></span>:<span th:text="${mms.seriesdesc}"></span></h3>
+					<p th:text="${mms.seriestext}"></p>
+					<ul class="list ins1" th:each="mm:${m}" th:remove="all-but-first">
+						<li><a id="1" th:id="${mm.mealseriesid}" th:href="caiping+${mm.mealid}" th:text="${mm.mealname}"></a><span th:text="${mm.mealprice}">￥10.00</span></li>
+					</ul>
+					<div class="more">
+						<a th:href="showMenuSeries+${mms.seriesid}">更多</a>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+<!-- //menu -->
+<!--- footer --->
+	<div class="footer">
+		<div class="container">
+			<div class="footer-grids">
+				<div class="col-md-3 footer-grid">
+					<h3>Extras</h3>
+					<p>Ut rutrum neque a mollis laoreet diam enim feuiat dui nec ulacoper quam felis id diam. Nunc ut tortor ligula eu petiu risus. Pelleesque conquat dignissim lacus quis altrcies.</p>
+				</div>
+				<div class="col-md-3 footer-grid">
+					<h3>Recent Posts</h3>
+					<ul>
+						<li><a href="#">Vestibulum felis</a></li>
+						<li><a href="#">Mauris at tellus</a></li>
+						<li><a href="#">Donec ut lectus</a></li>
+						<li><a href="#">vitae interdum</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 footer-grid">
+					<h3>Useful Info</h3>
+					<ul>
+						<li><a href="#">Hendrerit quam</a></li>
+						<li><a href="#">Amet consectetur </a></li>
+						<li><a href="#">Iquam hendrerit</a></li>
+						<li><a href="#">Donec ut lectus </a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 footer-grid">
+					<h3>Contact Us</h3>
+					<p>Pelleesque conquat dignissim lacus quis altrcies.</p>
+					<div class="footer-grid-address">
+						<p>Tel.800-255-9999</p>
+						<p>Fax: 1234 568</p>
+						<p>Email: <a class="email-link" href="mailto:info@example.com">Example.com</a></p>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<div class="clear"> </div>
+	<div class="copy-right">
+		<p>Copyright &copy; 2015.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="家肴">家肴小站</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+	</div>
+<!--- //footer --->
+<!-- for bootstrap working -->
+		<script src="js/bootstrap.js"> </script>
+<!-- //for bootstrap working -->
+</body>
+</html>

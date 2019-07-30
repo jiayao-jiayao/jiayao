@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="day0730_springcloud_eurekaclient" />
+        <module name="j1902_pojo" />
+        <module name="day0730_springcloud_eurekaserver9090" />
+        <module name="day0730_springcloud_eurekazuul" />
+        <module name="day0730_springcloud_eurekafeign10020" />
+        <module name="day0730_springcloud_loginclient10001" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="day0730_springcloud_eurekaclient" options="-parameters" />
+      <module name="day0730_springcloud_eurekafeign10020" options="-parameters" />
+      <module name="day0730_springcloud_eurekaserver9090" options="-parameters" />
+      <module name="day0730_springcloud_eurekazuul" options="-parameters" />
+      <module name="day0730_springcloud_loginclient10001" options="-parameters" />
+    </option>
+  </component>
+</project>

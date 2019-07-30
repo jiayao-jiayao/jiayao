@@ -1,0 +1,21 @@
+
+server:
+  port: 10010
+spring:
+  application:
+    name: cloud-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9090/eureka/
+zuul:
+  routes:
+    api-a:
+      path: /api-a/*
+      serviceId: eureka-client
+    api-b:
+      path: /api-b/*
+      serviceId: login-client
+  host:
+    connect-timeout-millis: 60000
+    socket-timeout-millis: 60000

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>菜品详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Pasta Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+    function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/caixistyle.css" rel="stylesheet" type="text/css" media="all" />
+    <style>
+        #aaa{
+            margin-left: 100px;
+            margin-top: -40px;
+        }
+        #zi{
+            margin-top: -15px;
+        }
+        *{
+            margin:0;
+            padding:0;
+        }
+
+        .box{
+            margin-left: 80px;
+            margin-top: -35px;
+            height: 50px;
+            width: 300px;
+        }
+        .box .comment{
+            font-size: 30px;
+            color: orange;
+        }
+
+        .comment li{
+            float: left;
+            cursor: pointer;
+        }
+
+        ul{
+            list-style: none;
+        }
+     #huiliu{
+         width:360px;
+         height: 80px;
+         margin-left: 15px;
+         margin-top: -20px;
+     }
+        #double{
+            margin-bottom: -10px;
+            margin-left: 260px;
+        }
+        #tab_tit{
+            margin-left: 18px;
+            margin-bottom: -10px;
+            border-top: 200px;
+        }
+        #tab{
+            margin-top: 10px;
+        }
+        .modal-content{
+            margin-top: 300px;
+        }
+    </style>
+    <!-- js -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <!-- //js -->
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".like").click(function () {
+                if(true){
+
+                    var id = $(this).attr("value");
+
+                    $(this).css("color","red");//改变颜色
+                    var sh=document.getElementById(id).innerHTML;//获得点赞数
+                    document.getElementById(id).innerHTML=sh++;
+                    document.getElementById(id).innerHTML=sh
+
+
+                }else if(false){
+                    alert("请登录后操作")
+                }
+
+            })
+            $("#kk").click(function(){
+                if(false){
+                    var kk=document.getElementById("kk");
+                    kk.disabled="disabled";
+                    alert("请登录后操作")
+                }
+            })
+        })
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event){
+                event.preventDefault();
+                $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+            });
+        });
+    </script>
+    <!-- start-smoth-scrolling -->
+    <link href='http://fonts.useso.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+<!-- header -->
+<div class="header">
+    <div class="container">
+        <div class="header-nav">
+            <nav class="navbar navbar-default">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index"><i class="glyphicon glyphicon-cutlery" aria-hidden="true"></i><span>家</span>肴</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="hvr-bounce-to-bottom active"><a href="index">主页</a></li>
+                        <li class="hvr-bounce-to-bottom"><a href="about">About</a></li>
+                        <li class="hvr-bounce-to-bottom"><a href="menu">菜系</a></li>
+                        <li class="hvr-bounce-to-bottom"><a href="diandan">我的订单</a></li>
+                        <li class="hvr-bounce-to-bottom"><a href="active">活动</a></li>
+                        <li class="hvr-bounce-to-bottom"><a href="contact">登录</a></li>
+                    </ul>
+                </div><!-- /navbar-collapse -->
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- //header -->
+<!-- single -->
+<div class="single">
+    <div class="container">
+        <h3>菜品详情</h3>
+        <div class="single-left">
+            <img src="images/01.jpg" alt=" "/>
+        </div>
+        <div class="single-right">
+            <label>菜名</label>
+            <h4 class="meal-name">雪梨肉肘棒</h4>
+            <label>菜品简要</label>
+            <p class="meal-sum">
+                味鲜香甜咸，肘棒不腻
+            </p>
+            <label>菜品描述</label>
+            <p class="meal-desc">
+                味鲜香甜咸，肘棒不腻
+            </p>
+            <p class="mealcount">
+                月销<span>34</span>份
+            </p>
+            <div class="mealprice">
+                <span >￥</span>
+                <span>10.00</span>
+            </div>
+            <div class="shopcar-icon">
+                <button class="mealshopcar">
+                    加入购物车
+                </button>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+        <div class="three-com" id="comment" >
+            <h3>评论区</h3>
+            <div class="tom-grid"th:each="ping:${pings}">
+                <div class="tom">
+                    <img th:src="@{'images/'+${ping.head}}" style="width: 70px;height:70px"/>
+                </div>
+                <div class="tom-right">
+                    <div class="Hardy">
+                        <h4 th:text="${ping.loginName}">全去哪</h4>
+                        <p><label th:text="${ping.time}">2015年7月20日</label></p><br>
+                        <span> <ul th:switch="${ping.zan}" style="color: orange;margin-top: -22px;font-size: 30px;">
+
+                        <li th:case="1" value="1">★</li>
+                        <li th:case="2" value="2">★★</li>
+                        <li th:case="3" value="3">★★★</li>
+                        <li th:case="4" value="4">★★★★</li>
+                        <li th:case="5" value="5">★★★★★</li>
+                        </ul></span>
+                        <p><label th:text="${ping.comment}">2015年7月20日</label></p>
+                    </div>
+                    <div class="reply">
+
+                        <a data-toggle="modal" data-target="#login" href="" th:onclick="hui([[${ping.id}]])">回复</a>
+                    </div>
+                    <div class="clearfix"> </div>
+                    <span class="like" th:value="${ping.id}">&#10084;</span>
+                    <!--   <p class="lorem">点赞数<span id="shu" class="mealcount">123</span>次</p>-->
+                    <p class="lorem" style="float: right;margin-right: -50px;">点赞<span th:id="${ping.id}" th:text="${ping.zan}" class="mealcount">123</span>次</p>
+                    <span th:id="${ping.id}+a"></span>
+                    <br>
+                    <input type="hidden" th:value="${ping.id}" id="yin">
+                </div>
+                <div class="clearfix"> </div>
+                <div id="login" class="modal fade">
+                    <div class="modal-dialog" style="width: 400px">
+                        <div class="modal-content">
+                            <div id="tab" >
+                                <div id="tab_tit">
+
+                                    <h2 class="active">回复板</h2>
+                                </div>
+                                <div id="tab_con">
+                                    <div id="t_con_log" class="content">
+                                        <br/>
+                                        <textarea id="huiliu" placeholder="坤坤回复" required=" "></textarea>
+                                        <br/>
+                                        <div id="double">
+                                        <button class="btn btn-primary" type="submit" th:onclick="hh()">回复</button>
+                                        <button class="btn btn-danger" data-dismiss="modal">取消</button>
+                                       </div>
+                                        <br/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+
+    </div>
+
+
+        <div class="leave-comment">
+            <h3>留下您的评论</h3><br>
+            <span id="zi">菜品打分:</span>
+            <!--五星-->
+            <div class="box">
+                <ul class="comment" name="xingji">
+                    <li value="1">☆</li>
+                    <li value="2">☆</li>
+                    <li value="3">☆</li>
+                    <li value="4">☆</li>
+                    <li value="5">☆</li>
+                </ul>
+                <input type="hidden" name="xing" value="" id="aaa">
+            </div>
+            <textarea id="ptextarea" placeholder="评论" required=" "></textarea>
+            <input type="submit" value="发送" id="postBt">
+            <div class="clearfix"> </div>
+
+        </div>
+
+
+</div>
+
+
+</div>
+<!-- //single -->
+<!--footer -->
+<div class="footer">
+    <div class="container">
+        <div class="footer-grids">
+            <div class="col-md-3 footer-grid">
+                <h3>Extras</h3>
+                <p>Ut rutrum neque a mollis laoreet diam enim feuiat dui nec ulacoper quam felis id diam. Nunc ut tortor ligula eu petiu risus. Pelleesque conquat dignissim lacus quis altrcies.</p>
+            </div>
+            <div class="col-md-3 footer-grid">
+                <h3>Recent Posts</h3>
+                <ul>
+                    <li><a href="#">Vestibulum felis</a></li>
+                    <li><a href="#">Mauris at tellus</a></li>
+                    <li><a href="#">Donec ut lectus</a></li>
+                    <li><a href="#">vitae interdum</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-grid">
+                <h3>Useful Info</h3>
+                <ul>
+                    <li><a href="#">Hendrerit quam</a></li>
+                    <li><a href="#">Amet consectetur </a></li>
+                    <li><a href="#">Iquam hendrerit</a></li>
+                    <li><a href="#">Donec ut lectus </a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-grid">
+                <h3>Contact Us</h3>
+                <p th>Pelleesque conquat dignissim lacus quis altrcies.</p>
+                <div class="footer-grid-address">
+                    <p>Tel.800-255-9999</p>
+                    <p>Fax: 1234 568</p>
+                    <p>Email:<a class="email-link" href="mailto:info@example.com">Example.com</a></p>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<div class="clear"> </div>
+<div class="copy-right">
+    <p>Copyright &copy; 2015.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+</div>
+<!--- //footer --->
+<!-- for bootstrap working -->
+<script src="js/bootstrap.js"> </script>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script th:inline="javascript" type="text/javascript">
+    var liu="坤坤回复";//回复框里原来的值
+    var idd
+    var name
+function hui(id){
+
+
+        $.ajax({
+            url:"findhui",
+            type:"post",
+            data:{"lid":id},
+            success:function (name) {
+                document.getElementById("huiliu").setAttribute("placeholder","坤坤回复");
+                /*    liu = document.getElementById("huiliu").placeholder;//回复框里原来的值*/
+                document.getElementById("huiliu").setAttribute("placeholder","坤坤回复"+name);//name+框里原来的值
+                var jiahui = document.getElementById("yin").value;
+                id=jiahui+"a";
+
+                liu="坤坤回复"+name;
+            }
+        })
+
+            idd=id
+}
+
+function hh(){
+    var inp = document.getElementById("huiliu").value;
+
+    //var jiahui = document.getElementById("yin").value;//拿隐形框值
+
+
+    var sp= document.getElementById(idd+"a").innerHTML;//获得span
+
+    document.getElementById(idd+"a").innerHTML=liu+inp;//改变内容
+
+}
+
+    document.getElementById("postBt").onclick = function(){Storage.saveData();}//发表评论按钮添加点击事件，作用是将localStorage中的数据输出
+    var Storage ={
+        saveData:function()//保存数据
+        {
+            var data = document.getElementById("ptextarea").value;//评论
+            var data1 = document.getElementById("ptextarea")
+
+
+            if(data.value != "")
+            {
+                data1.value = "";
+                this.writeData(data);
+            }
+            else
+            {
+                alert("请填写您的留言！");
+            }
+        },
+
+        writeData:function(data)//输出数据
+        {
+
+            $.ajax({
+                url:"addp",
+                type:"post",
+                data:{"value":data},
+                success:function (msg) {
+
+                    var yi = document.createElement("div");
+                    var xingzhi;
+                    var xingshu = document.getElementById("aaa").value;
+                    alert(xingshu)
+                    if(xingshu==1){
+                        xingzhi="★";
+                    }else if(xingshu==2){
+                        xingzhi="★★";
+                    }else if(xingshu==3){
+                        xingzhi="★★★";
+                    }else if(xingshu==4){
+                        xingzhi="★★★★";
+                    }else if(xingshu==5){
+                        xingzhi="★★★★★";
+                    }
+
+                    yi.innerHTML = " <div class=\"tom\">\n" +
+                        "<img src=\"images/t2.jpg\" style=\"width: 70px;height:70px\" alt=\" \" />\n" +
+                        "</div>\n" +
+                        "<div class=\"tom-right\">\n" +
+                        "<div class=\"Hardy\">\n" +
+                        "<h4>" + msg + "</h4>\n" +
+                        "<p><label>2019年7月25日</label></p>\n" +
+                        "<span> <ul style=\"color: orange;margin-top: -12px;font-size: 30px;\">\n"+
+
+                        "<li>"+xingzhi+"</li>"+
+
+
+                        "</ul></span>\n"+
+                        "<p><label>" + data + "</label></p>\n" +
+
+                        "</div>\n" +
+                        " <div class=\"reply\">\n" +
+                        " <a href=\"#\">回复</a>\n" +
+                        "</div>\n" +
+                        " <div class=\"clearfix\"> </div>\n" +
+                        "<span class=\"like\">&#10084;</span>\n" +
+                        " <!-- <p class=\"lorem\">点评<span id=\"shu\" class=\"mealcount\">123</span>次</p>-->\n" +
+                        " </div>\n" +
+                        " <div class=\"clearfix\"> </div>\n" +
+                        "</div>"
+                    var comm = document.getElementById("comment").appendChild(yi);
+                }
+            })
+        }
+    }
+    //五星
+    $(function(){
+        var wjx_none = '☆'; // 空心五角星
+        var wjx_sel = '★'; // 实心五角星
+
+        //鼠标移进变实星
+        $(".comment li").on("mouseover",function(){
+            $(this).text(wjx_sel).prevAll("li").
+            text(wjx_sel).end().nextAll().text(wjx_none);
+            $("#aaa").val($(this).val());
+
+        });
+
+        //鼠标移出变空星
+        $(".comment li").on("mouseout",function(){
+            if($("li.current").length === 0){
+                $(".comment li").text(wjx_none);
+            }else{
+                $("li .current").text(wjx_sel).prevAll().text(wjx_sel).end().nextAll().text(wjx_none);
+            }
+        });
+
+        //鼠标点击保持当前状态
+        $(".comment li").on("click",function(){
+            $(this).attr("class","current").siblings().removeClass("current");
+
+            $("#aaa").val($(this).val());
+            // alert($(this).val());
+        });
+
+
+    });
+</script>
+<!-- //for bootstrap working -->
+</body>
+</html>

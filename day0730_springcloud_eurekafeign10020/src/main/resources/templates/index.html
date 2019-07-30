@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>首页</title>
+	<!-- for-mobile-apps -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Pasta Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+	function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- //for-mobile-apps -->
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/mycss.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- js -->
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<!--<script src="js/bootstrap.js"></script>-->
+	<script src="js/mylogin.js"></script>
+	<!-- //js -->
+	<!-- start-smoth-scrolling -->
+	<!--<script type="text/javascript" src="js/move-top.js"></script>-->
+	<!--<script type="text/javascript" src="js/easing.js"></script>-->
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+	</script>
+	<!-- start-smoth-scrolling -->
+	<!--<link href='http://fonts.useso.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>-->
+</head>
+<style type="text/css">
+
+	.navbar{
+		/*margin-bottom: -10px;*/
+	}
+	#myppt{
+		margin-top: -20px;
+
+	}
+	.back{
+		background: #fbd138e0;
+	}
+	.back1{
+		background: #ef2f26ad;
+		height: 404px;
+	}
+
+	.back2 {
+		background: #c5a23ebd;
+		height: 404px;
+	}
+	.back3{
+		background: #e2e5e39c;
+		height: 404px;
+	}
+	#pt1{
+		margin-bottom: 5mm;
+		color: #6f5406;
+		margin-left: 10px;
+	}
+	#pt2{
+		margin-bottom: 5mm;
+		margin-left: 35px;
+		color: #af320b;
+	}
+	#pt3{
+		margin-bottom: 5mm;
+		margin-left: 22px;
+		color: #734c10a8;
+	}
+	#pt4{
+		margin-bottom: 5mm;
+		margin-left: 20px;
+		color: #807c7a;
+	}
+	.imgt {
+		width: 210px;
+		height: 210px;
+		margin-left: -9px;
+	}
+	/*Welcome下沉*/
+	#we {
+		margin-top: 130px;
+	}
+	/*新品上市图片大小*/
+	#imgx{
+		display: block;
+		width: 300px;
+		height: 220px;
+	}
+	/*新品上市文字宽度*/
+	#px{
+		width: 80%;
+	}
+	/*logo背景图*/
+	#imgs{
+		width: 100%;
+		height: 400px;
+		background-image: url("img/logoditu.jpg");
+	}
+	/*logo图*/
+	#img1 {
+		margin-left: 15cm;
+		margin-top: 1cm;
+	}
+	/*购物车logo*/
+	#gouwuche {
+		float: right;
+		margin-right: 55px;
+		margin-top: 10px;
+	}
+	#gouwuche:hover{
+		cursor: pointer;
+	}
+	#imgss {
+		margin-right: -30px;
+
+	}
+</style>
+<body>
+<!-- header -->
+<div class="header">
+	<div id="gouwuche" onclick="gotoGo()">
+		<img src="img/shoppingcar.png" id="imgss" >
+	</div>
+	<div class="container">
+		<div class="header-nav">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html"><i class="glyphicon glyphicon-cutlery" aria-hidden="true"></i><span>家</span>肴</a>
+					<label style="color: #1bfe04;padding-top: 20%" >嗨！游客</label>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="hvr-bounce-to-bottom active"><a href="index">主页</a></li>
+						<li class="hvr-bounce-to-bottom"><a href="about">About</a></li>
+						<li class="hvr-bounce-to-bottom"><a href="menu">菜系</a></li>
+						<li class="hvr-bounce-to-bottom"><a href="diandan">我的订单</a></li>
+						<li class="hvr-bounce-to-bottom"><a href="active">活动</a></li>
+						<!--<li class="hvr-bounce-to-bottom">-->
+							<!--&lt;!&ndash;<a href="contact" >登录</a>&ndash;&gt;-->
+							<!--<a data-toggle="modal" data-target="#login" href="">登录</a>-->
+						<!--</li>-->
+						<li class="hvr-bounce-to-bottom">
+							<a data-toggle="modal" data-target="#login" href="">登录</a>
+						</li>
+					</ul>
+				</div><!-- /navbar-collapse -->
+			</nav>
+		</div>
+	</div>
+</div>
+
+<!-- //header -->
+
+<!-- 登录窗口 -->
+<div id="login" class="modal fade">
+	<div class="modal-dialog" style="width: 400px">
+		<div class="modal-content">
+			<div id="tab" >
+
+				<div id="tab_tit">
+					<h2 class="active">登录</h2>
+					<h2 >注册</h2>
+				</div>
+				<div id="tab_con">
+					<div id="t_con_log" class="content">
+						<form class="form-group" action="userlogin">
+							<br/>
+							<label>用户名</label>
+							<input class="form-control" type="text" style="width: 95%" name="username" id="username" placeholder="Please enter user name">
+							<br/>
+
+							<label>密码</label>
+							<input class="form-control" type="password"   style="width: 95%" name="password" id="password"  placeholder="Please enter password">
+							<br/>
+							<button class="btn btn-primary" type="submit">登录</button>
+							<button class="btn btn-danger" data-dismiss="modal">取消</button>
+							<br/>
+
+						</form>
+					</div>
+					<div id="t_con_reg" >
+						<form class="form-group" action="userreg" method="post">
+							<br/>
+							<label >用户名</label>
+							<input class="form-control" type="text"   style="width: 95%"placeholder="6-15位字母或数字"/>
+							<br/>
+							<label >密码</label>
+							<input class="form-control" type="password" style="width: 95%" placeholder="至少6位字母或数字"/>
+							<br/>
+							<label >手机号</label>
+							<input id="phone" class="form-control" type="text"  style="width: 95%" placeholder="请输入手机号 "/>
+							<button id="btnyzm" type="button" >点击获取验证码</button>
+							<br/>
+							<label >验证码</label>
+							<input class="form-control" type="password"  style="width: 95%" placeholder="请输入验证码 "/>
+							<h5 id="yanzheng"style="display:none">验证码错误</h5>
+							<br/>
+							<!--<label >真实姓名</label>-->
+							<!--<input class="form-control" type="text"  style="width: 95%" placeholder="请输入真实姓名"/>-->
+							<br/>
+							<button class="btn btn-primary" type="submit">提交</button>
+							<button class="btn btn-danger" data-dismiss="modal">取消</button>
+							<br/>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- banner -->
+<div class="banner">
+	<!-- Slider-starts-Here -->
+	<script src="js/responsiveslides.min.js"></script>
+	<script>
+		// You can also use "$(window).load(function() {"
+		$(function () {
+			// Slideshow 4
+			$("#slider3").responsiveSlides({
+				auto: true,
+				pager: false,
+				nav: false,
+				speed: 500,
+				namespace: "callbacks",
+				before: function () {
+					$('.events').append("<li>before event fired.</li>");
+				},
+				after: function () {
+					$('.events').append("<li>after event fired.</li>");
+				}
+			});
+
+		});
+	</script>
+	<script>
+        $(function () {
+            var Num = 60;
+            function getNumber() {
+                var timer= setInterval(function () {
+                    $("#btnyzm").attr("disabled", "disabled");
+                    $("#btnyzm").text(Num + "秒后重新获取");
+                    if (Num > 0) {  Num--;} else {
+                        $("#btnyzm").attr("disabled", false);
+                        $("#btnyzm").text("点击获取验证码");
+                        Num = 60;
+                        clearInterval(timer);
+                    }
+                }, 1000);
+
+            };
+            $("#btnyzm").click(function () {
+                getNumber();
+                var phone= document.getElementById("phone");
+                $.ajax({
+					url: "reg2",
+					data:"phone",
+					type:"post",
+					error: function () {
+                        document.getElementById("yanzheng").style.display="inline";
+                    }
+				})
+            })
+        })
+	</script>
+	<!--//End-slider-script -->
+	<div  id="top" class="callbacks_container">
+		<ul class="rslides" id="slider3">
+			<li>
+				<div class="banner-info">
+					<div class="baner-inf">
+						<h1>偶遇!</h1>
+						<p>家肴，家的味道</p>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="banner-info1">
+					<div class="baner-inf">
+						<h1>一次！</h1>
+						<p>她就会留在你的记忆</p>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="banner-info2">
+					<div class="baner-inf">
+						<h1>享受！</h1>
+						<p>度过一个难忘的时光</p>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="banner-bottom-grids">
+		<div class="container">
+			<div class="col-md-3 banner-bottom-grid">
+				<div class="banner-bottom-grd back">
+					<h4>01</h4>
+					<p id="pt1">长沙麻仁香酥鸭</p>
+					<div class="clearfix"  id="clickdiv1">
+						<img src="http://i1.sinaimg.cn/travel/2014/0117/U7398P704DT20140117181027.jpg" class="imgt">
+					</div>
+				</div>
+				<p class="debitis">长沙麻仁香酥鸭是长沙特一级厨师石荫祥大胆推出的优秀之作。此菜集松软、酥脆、软嫩、鲜香于一体，深得四方宾客称赞。</p>
+			</div>
+			<div class="col-md-3 banner-bottom-grid">
+				<div class="banner-bottom-grd back1">
+					<h4>02</h4>
+					<p id="pt2">四川毛血旺</p>
+					<div class="clearfix">
+						<img src="https://gss2.bdstatic.com/-fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike933%2C5%2C5%2C933%2C330/sign=f445fb0375f40ad101e9cfb136457aba/8b82b9014a90f6038db3507c3712b31bb051ed8f.jpg" class="imgt">
+					</div>
+				</div>
+				<p class="debitis">20世纪40年代，沙坪坝磁器口古镇水码头有一王姓屠夫每天把卖肉剩下的杂碎，在杂碎汤里直接放入鲜生猪血旺，发现血旺越煮越嫩，味道更鲜。这道菜是将生血旺现烫现吃，遂取名毛血旺。</p>
+			</div>
+			<div class="col-md-3 banner-bottom-grid">
+				<div class="banner-bottom-grd back2">
+					<h4>03</h4>
+					<p id="pt3">潮州卤水拼盘</p>
+					<div class="clearfix">
+						<img src="https://gss3.bdstatic.com/7Po3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign=06fc0bd52d7f9e2f6438155a7e598241/21a4462309f790523f55fe0d06f3d7ca7bcbd5bf.jpg" class="imgt">
+					</div>
+				</div>
+				<p class="debitis">与中华其他美食相比，潮菜是最“上得厅堂”的菜色之一。它的独到之处在于能够源源不断地吸纳其他菜系的特色而不失“色香味形”并行的本色；其内涵则有如潮汕女性——端庄大方，不哗众取宠。</p>
+			</div>
+			<div class="col-md-3 banner-bottom-grid">
+				<div class="banner-bottom-grd back3">
+					<h4>04</h4>
+					<p id="pt4">淮扬大煮干丝</p>
+					<div class="clearfix">
+						<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1563431115069&di=542a6de6d9636bd2d59cd8fb1cffcf46&imgtype=0&src=http%3A%2F%2Fcontent.pic.tianqistatic.com%2F20180918%2F95db1242501df674a2980f6de8a2eff6.jpeg" class="imgt">
+					</div>
+				</div>
+				<p class="debitis">大煮干丝是一道既清爽，又有营养的佳肴，其风味之美，历来被推为席上美馔，淮扬菜系中的看家菜。原料主要为淮扬方干，刀工要求极为精细，多种佐料的鲜香味经过烹调，复合到豆腐干丝里，吃起来爽口开胃，异常珍美，百食不厌。</p>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!-- //banner -->
+<div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >手机网站模板</a></div>
+<!-- banner-bottom1 -->
+<div class="banner-bottom1">
+	<div class="container" id="we">
+		<h3>新菜上市 !</h3>
+		<div class="banner-bottom1-grids">
+			<div class="col-md-4 banner-bottom1-grid">
+				<img src="http://i2.chuimg.com/40300ad487fa11e6b87c0242ac110003_1511w_2268h.jpg?imageView2/2/w/660/interlace/1/q/90" alt=" " class="img-responsive" id="imgx"/>
+			</div>
+			<div class="col-md-8 banner-bottom1-grid">
+				<h4>台式三杯鸡以鸡肉、干辣椒、小红葱头、九层塔等食材制作而成。风味独特，以色泽红润光亮，鸡肉软滑细嫩，酱汁醇厚香浓而闻名</h4>
+				<p id="px"> 三杯鸡本是江西特色菜，因烹调鸡块时加入米酒、猪油、酱油各一小杯，不放汤水，用炭火将鸡块炖熟而得名。它的来源与文天祥有关。相传，文天祥抗元被俘后，一位老婆婆去狱中看望他，用米酒炖了自家的鸡给他吃，并且这是文天祥最后的晚饭。后人为了纪念他，这道菜就被广为流传了。</p>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!-- //banner-bottom1 -->
+<!-- newsletter -->
+<div>
+	<div id="imgs">
+		<img id="img1" src="img/cbkmz1.png" align="center">
+	</div>
+</div>
+<!-- //newsletter -->
+<!-- news -->
+
+<div class="news">
+	<div class="container">
+		<h3>News & Events</h3>
+		<p class="eum">Vel illum qui dolorem eum aliquid ex ea commodi consequatur
+			vel illum qui dolorem eum fugiat quo voluptas</p>
+		<div class="news-grids">
+			<div class="col-md-6 news-grid">
+				<div class="col-xs-4 news-grid-left">
+					<p>22nd<span>July</span></p>
+				</div>
+				<div class="col-xs-8 news-grid-right">
+					<p>Itaque earum rerum hic tenetur a sapiente
+						delectus, ut aut reiciendis voluptatibus maiores alias consequatur
+						aut perferendis doloribus asperiores repellat.</p>
+					<div class="more">
+						<a href="single.html">Learn More</a>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="col-md-6 news-grid">
+				<div class="col-xs-4 news-grid-left">
+					<p>28th<span>July</span></p>
+				</div>
+				<div class="col-xs-8 news-grid-right">
+					<p>Itaque earum rerum hic tenetur a sapiente
+						delectus, ut aut reiciendis voluptatibus maiores alias consequatur
+						aut perferendis doloribus asperiores repellat.</p>
+					<div class="more">
+						<a href="single.html">Learn More</a>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+		<div class="news-grids">
+			<div class="col-md-6 news-grid">
+				<div class="col-xs-4 news-grid-left">
+					<p>25th<span>May</span></p>
+				</div>
+				<div class="col-xs-8 news-grid-right">
+					<p>Itaque earum rerum hic tenetur a sapiente
+						delectus, ut aut reiciendis voluptatibus maiores alias consequatur
+						aut perferendis doloribus asperiores repellat.</p>
+					<div class="more">
+						<a href="single.html">Learn More</a>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="col-md-6 news-grid">
+				<div class="col-xs-4 news-grid-left">
+					<p>30th<span>May</span></p>
+				</div>
+				<div class="col-xs-8 news-grid-right">
+					<p>Itaque earum rerum hic tenetur a sapiente
+						delectus, ut aut reiciendis voluptatibus maiores alias consequatur
+						aut perferendis doloribus asperiores repellat.</p>
+					<div class="more">
+						<a href="single.html">Learn More</a>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!-- //news -->
+<!-- customer -->
+<div class="customer">
+	<div class="container">
+		<h3>Customer Says</h3>
+		<div class="customer-grids">
+			<ul id="flexiselDemo1">
+				<li>
+					<div class="customer-grid">
+						<p> Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+							consectetur, adipisci velit, sed quia non numquam eius modi tempora
+							incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+						<h4>John Smith <span>Manager</span></h4>
+					</div>
+				</li>
+				<li>
+					<div class="customer-grid">
+						<p> Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+							consectetur, adipisci velit, sed quia non numquam eius modi tempora
+							incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+						<h4>Micheal Robert <span>Head Cook</span></h4>
+					</div>
+				</li>
+				<li>
+					<div class="customer-grid">
+						<p> Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+							consectetur, adipisci velit, sed quia non numquam eius modi tempora
+							incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+						<h4>Williumson <span>Ass Manager</span></h4>
+					</div>
+				</li>
+			</ul>
+			<script type="text/javascript">
+				$(window).load(function() {
+					$("#flexiselDemo1").flexisel({
+						visibleItems: 3,
+						animationSpeed: 1000,
+						autoPlay: true,
+						autoPlaySpeed: 3000,
+						pauseOnHover: true,
+						enableResponsiveBreakpoints: true,
+						responsiveBreakpoints: {
+							portrait: {
+								changePoint:480,
+								visibleItems: 1
+							},
+							landscape: {
+								changePoint:640,
+								visibleItems:3
+							},
+							tablet: {
+								changePoint:768,
+								visibleItems: 3
+							}
+						}
+					});
+
+				});
+			</script>
+			<script type="text/javascript" src="js/jquery.flexisel.js"></script>
+		</div>
+	</div>
+</div>
+<!-- //customer -->
+<!--- footer --->
+<div class="footer">
+	<div class="container">
+		<div class="footer-grids">
+			<div class="col-md-3 footer-grid">
+				<h3>Extras</h3>
+				<p>Ut rutrum neque a mollis laoreet diam enim feuiat dui nec ulacoper quam felis id diam. Nunc ut tortor ligula eu petiu risus. Pelleesque conquat dignissim lacus quis altrcies.</p>
+			</div>
+			<div class="col-md-3 footer-grid">
+				<h3>Recent Posts</h3>
+				<ul>
+					<li><a href="#">Vestibulum felis</a></li>
+					<li><a href="#">Mauris at tellus</a></li>
+					<li><a href="#">Donec ut lectus</a></li>
+					<li><a href="#">vitae interdum</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3 footer-grid">
+				<h3>Useful Info</h3>
+				<ul>
+					<li><a href="#">Hendrerit quam</a></li>
+					<li><a href="#">Amet consectetur </a></li>
+					<li><a href="#">Iquam hendrerit</a></li>
+					<li><a href="#">Donec ut lectus </a></li>
+				</ul>
+			</div>
+			<div class="col-md-3 footer-grid">
+				<h3>Contact Us</h3>
+				<p>Pelleesque conquat dignissim lacus quis altrcies.</p>
+				<div class="footer-grid-address">
+					<p>Tel.800-255-9999</p>
+					<p>Fax: 1234 568</p>
+					<p>Email: <a class="email-link" href="mailto:info@example.com">Example.com</a></p>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<div class="clear"> </div>
+<div class="copy-right">
+	<p>Copyright &copy; 2015.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+</div>
+<!--- //footer --->
+<!-- for bootstrap working -->
+<script src="js/bootstrap.js"> </script>
+<!-- //for bootstrap working -->
+<script type="text/javascript">
+	function gotoGo(){
+		window.location.href="gouwuche";
+	}
+</script>
+</body>
+</html>

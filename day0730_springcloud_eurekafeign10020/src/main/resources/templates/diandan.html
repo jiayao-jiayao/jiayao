@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>订单页面</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Pasta Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+    function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <style type="text/css">
+        #ss{
+            margin-left: 90px;
+            margin-bottom: 20px;
+        }
+
+        ul.breadcrumb {
+            padding: 10px 16px;
+            list-style: none;
+            background-color: #eee;
+            font-size: 17px;
+            margin-left: 90px;
+        }
+        ul.breadcrumb li {display: inline;}
+        ul.breadcrumb li+li:before {
+            padding: 8px;
+            color: black;
+            content: "|\00a0";
+        }
+        ul.breadcrumb li a {
+            color: #0275d8;
+            text-decoration: none;
+        }
+        ul.breadcrumb li a:hover {
+            color: #040505;
+            text-decoration: underline;
+        }
+        table.hovertable {
+            font-family: verdana,arial,sans-serif;
+            font-size:17px;
+            color:#2FD828;
+            border-width: 1px;
+            border-color: #999999;
+            border-collapse: collapse;
+            width:80%;
+            margin-left:100px;
+        }
+        table.hovertable th {
+            background-color: #040505;
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #cbeef1;
+            text-align:center;
+        }
+        table.hovertable tr {
+            background-color:#d4e3e5;
+        }
+        table.hovertable td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #d1f5f9;
+            text-align:center;
+        }
+    </style>
+    <!-- js -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <!-- //js -->
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event){
+                event.preventDefault();
+                $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+            });
+        });
+    </script>
+    <!-- start-smoth-scrolling -->
+    <link href='http://fonts.useso.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+<!-- header -->
+<div class="header">
+    <div class="container">
+        <div class="header-nav">
+            <nav class="navbar navbar-default">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><i class="glyphicon glyphicon-cutlery" aria-hidden="true"></i><span>P</span>asta</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="hvr-bounce-to-bottom active"><a href="index">主页</a></li>
+                        <li class="hvr-bounce-to-bottom"><a href="about">About</a></li>
+                        <li class="hvr-bounce-to-bottom"><a href="menu">菜系</a></li>
+                        <li class="hvr-bounce-to-bottom"><a href="diandan">我的订单</a></li>
+                        <li class="hvr-bounce-to-bottom"><a href="active">活动</a></li>
+                        <li class="hvr-bounce-to-bottom"><a href="contact">登录</a></li>
+                    </ul>
+                </div><!-- /navbar-collapse -->
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- //header -->
+<!-- contact -->
+<div class="contact">
+
+    <ul class="breadcrumb">
+        <li><a href="#">所有订单</a></li>
+        <li><a href="#">待付款</a></li>
+        <li><a href="#">待发货</a></li>
+        <li><a href="#">待收货</a></li>
+        <li><a href="#">待评价</a></li>
+    </ul>
+    <div id="ss" class="container">
+        <form action="" class="parent">
+            <input type="text">
+            <input id="btn" type="button" value="订单搜索">
+        </form>
+    </div>
+
+    <table id="biao" class="hovertable">
+        <tr>
+            <th>菜品</th><th>单价</th><th>数量</th><th>交易状态</th><th>商品操作</th><th>订单操作</th>
+        </tr>
+        <tr id="hang" onmouseover="this.style.backgroundColor='#040505';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+            <td >
+                <img src="https://img.alicdn.com/imgextra/i2/2616970884/O1CN01Gv3VSc1IOuf2UV2R1_!!0-item_pic.jpg_80x80.jpg">
+            <p>枸杞炒蛋</p>
+            </td>
+            <td>￥29.90</td>
+            <td>1</td>
+            <td>已收货</td>
+            <td><button>退货</button><button>评价</button></td>
+            <td><button onclick="del()">删除</button><button>结算</button></td>
+        </tr>
+        <tr onmouseover="this.style.backgroundColor='#040505';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+            <td>Item 2A</td><td>Item 2B</td><td>Item 2C</td><td>Item 1A</td><td>Item 1B</td><td>Item 1C</td>
+        </tr>
+        <tr onmouseover="this.style.backgroundColor='#040505';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+            <td>Item 3A</td><td>Item 3B</td><td>Item 3C</td><td>Item 1A</td><td>Item 1B</td><td>Item 1C</td>
+        </tr>
+        <tr onmouseover="this.style.backgroundColor='#040505';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+            <td>Item 4A</td><td>Item 4B</td><td>Item 4C</td><td>Item 1A</td><td>Item 1B</td><td>Item 1C</td>
+        </tr>
+        <tr onmouseover="this.style.backgroundColor='#040505';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+            <td>Item 5A</td><td>Item 5B</td><td>Item 5C</td><td>Item 1A</td><td>Item 1B</td><td>Item 1C</td>
+        </tr>
+    </table>
+</div>
+<!-- //contact -->
+<!--- footer --->
+<div class="footer">
+    <div class="container">
+        <div class="footer-grids">
+            <div class="col-md-3 footer-grid">
+                <h3>Extras</h3>
+                <p>Ut rutrum neque a mollis laoreet diam enim feuiat dui nec ulacoper quam felis id diam. Nunc ut tortor ligula eu petiu risus. Pelleesque conquat dignissim lacus quis altrcies.</p>
+            </div>
+            <div class="col-md-3 footer-grid">
+                <h3>Recent Posts</h3>
+                <ul>
+                    <li><a href="#">Vestibulum felis</a></li>
+                    <li><a href="#">Mauris at tellus</a></li>
+                    <li><a href="#">Donec ut lectus</a></li>
+                    <li><a href="#">vitae interdum</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-grid">
+                <h3>Useful Info</h3>
+                <ul>
+                    <li><a href="#">Hendrerit quam</a></li>
+                    <li><a href="#">Amet consectetur </a></li>
+                    <li><a href="#">Iquam hendrerit</a></li>
+                    <li><a href="#">Donec ut lectus </a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-grid">
+                <h3>Contact Us</h3>
+                <p>Pelleesque conquat dignissim lacus quis altrcies.</p>
+                <div class="footer-grid-address">
+                    <p>Tel.800-255-9999</p>
+                    <p>Fax: 1234 568</p>
+                    <p>Email: <a class="email-link" href="mailto:info@example.com">Example.com</a></p>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<div class="clear"> </div>
+<div class="copy-right">
+    <p>Copyright &copy; 2015.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+</div>
+<!--- //footer --->
+<!-- for bootstrap working -->
+<script src="js/bootstrap.js"> </script>
+<script>
+    function del() {
+        biao=document.getElementById("biao");
+        hang=document.getElementById("hang");
+        alert("确定删除该订单吗？")
+        biao.removeChild(hang)
+    }
+</script>
+<!-- //for bootstrap working -->
+</body>
+</html>

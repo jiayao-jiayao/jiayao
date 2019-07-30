@@ -1,0 +1,224 @@
+﻿
+<html lang="en" xmlns:th="http://www.thyleaf.org">
+<head>
+	<meta charset="UTF-8" >
+	<title>Document</title>
+	<style>
+	table.hovertable {
+	width: 500px;
+
+		margin-top: 100px;
+    font-family: verdana,arial,sans-serif;
+    font-size:16px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #999999;
+
+	margin-right:100px;
+
+}
+	td{
+		border:0px;}
+table.hovertable th {
+    background-color:#c3dde0;
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #a9c6c9;
+}
+table.hovertable tr {
+    background-color:#d4e3e5;
+}
+table.hovertable td {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #a9c6c9;
+	text-align:center;
+}
+		*{
+			padding: 0;
+			margin: 0;
+		}
+        .an{
+            width: 100px;
+            height: 35px;
+            background: #1c948f94;
+        }
+		#uls{
+			width: 500px;
+			height: 500px;
+			margin: 50px auto;
+			margin-left: 100px;
+			float:left;
+			margin-top: -0px;
+		}
+		li{
+			width: 150px;
+			height: 150px;
+			background: #286165;
+			float: left;
+			list-style: none;
+			margin:5px;
+			color: #fff;
+			text-align: center;
+			line-height: 150px;
+			font-size: 20px;
+			font-weight: bold;
+		}
+		#uls li button{
+			width: 50px;
+			height: 30px;
+		}
+		.light{
+			width: 150px;
+			height: 150px;
+			background: #040505;
+			color: #fff;
+		}
+		#a{
+			background: #5fbb47;
+		}
+		#h{
+			background: #3e4bbb;
+		}
+	#c{
+		background: #bb3035;
+	}
+	#f{
+		background: #b5bb20;
+	}
+	/*#e{
+		background: #551ebb;
+	}
+	#f{
+		background: #56a8bb;
+	}
+	#g{
+		background: #bb972b;
+	}
+	#h{
+		background: #95a8bb;
+	}*/
+	</style>
+</head>
+<body>
+	<ul id='uls'>
+		<li id="a">再来一次</li>
+		<li id="b">谢谢惠顾</li>
+		<li id="c">100元优惠券</li>
+		<li id="d">80代金券</li>
+		<li><button id="btn1" onclick="kai()">开始</button> <button id="btn2"  onclick="stop()">停止</button></li>
+		<li id="e">本单八折优惠</li>
+		<li id="f">什么都没有</li>
+		<li id="g">1元优惠券</li>
+		<li id="h">霸王餐</li>
+	</ul>
+	<table class="hovertable" id="biao">
+<tr>
+    <th colspan="3">我的奖品</th>
+</tr>
+<tr th:each="jiang:${pingluns}" id="hang" onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+   <td th:text="${jiang.jiangname}">80代金券</td><td><button>去使用</button></td>
+</tr>
+
+</table>
+
+	<input type="hidden" size="30" id="url" th:value="${currpath}">
+	<input class="an" type="button" value="复制链接" onClick="fuzhi()">
+	<button class="an" type="submit" onclick="location.href='qidong'">分享给好友</button>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+	<script>
+function fuzhi() {
+	url.select();document.execCommand('Copy')
+	alert("复制成功")
+}
+		var btn1=document.getElementById("btn1");
+		var btn2=document.getElementById("btn2");
+		var arr=[0,1,2,5,8,7,6,3];//按这个下标依次旋转
+		var lis=document.getElementsByTagName("li");
+		var dshu=0;//抽奖次数
+		var num=0;  //定义初识下标
+
+
+
+		function kai(){
+		if(dshu==0){
+		
+			btn1.disabled=true;
+			time=setInterval(function(){
+				lis[arr[num]].className="";
+				num++;
+				if(num>7){
+					num=0;
+				}
+				lis[arr[num]].className="light";
+			},30)
+			dshu=dshu+1;
+		}else{
+		alert("对不起，您今天的机会已经用完了，可以分享给好友获得机会")
+		}
+		}
+		function stop(){
+			var qian;
+			var zhi="恭喜你获得";
+			btn1.disabled=false;
+			
+			if(lis[arr[num]].className="light"){
+			if(num==0){
+			zhi="再来一次"
+			alert(zhi)
+			}else if(num==1){
+			zhi="谢谢惠顾"
+			alert(zhi)
+			}
+			else if(num==2){
+				qian="100优惠券";
+
+			alert(zhi+qian);
+			}
+			else if(num==3){
+			qian="本单八折优惠"
+			alert(zhi+qian)
+			}
+			else if(num==4){
+			qian="霸王餐"
+				alert(zhi+qian)
+			}
+			else if(num==5){
+			qian="1元优惠券"
+				alert(zhi+qian)
+			}
+			else if(num==6){
+			zhi="什么都没有"
+			alert(zhi)
+			}
+			else if(num==7){
+			qian="恭喜你80代金券"
+				alert(zhi+qian)
+			}
+
+			if(num==2||num==3||num==4||num==5||num==7){
+				var biao = document.getElementById("biao");
+				var hang = document.createElement("tr");
+
+				hang.innerHTML="<td>"+qian+"</td><td><button>去使用</button></td>";
+				$.ajax({
+					url:"addjiang",
+					type:"post",
+					data:{"jiangn":qian},
+					success:function () {
+						biao.appendChild(hang)
+					}
+				})
+
+			}
+			}
+			clearInterval(time);
+		}
+
+	</script>
+</body>
+</html>
+

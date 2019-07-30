@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>菜系详情</title>
+<!--家肴菜单-->
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="keywords" content="Pasta Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/caixistyle.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<!-- //js -->
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<!-- start-smoth-scrolling -->
+<link href='http://fonts.useso.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+</head>
+	
+<body>
+<!-- header -->
+	<div class="header">
+		<div class="container">
+			<div class="header-nav">
+				<nav class="navbar navbar-default">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					    <a class="navbar-brand" href="index"><i class="glyphicon glyphicon-cutlery" aria-hidden="true"></i><span>家</span>肴</a>
+					</div>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+                            <li class="hvr-bounce-to-bottom active"><a href="index">主页</a></li>
+                            <li class="hvr-bounce-to-bottom"><a href="about">About</a></li>
+                            <li class="hvr-bounce-to-bottom"><a href="menu">菜系</a></li>
+                            <li class="hvr-bounce-to-bottom"><a href="diandan">我的订单</a></li>
+                            <li class="hvr-bounce-to-bottom"><a href="active">活动</a></li>
+                            <li class="hvr-bounce-to-bottom"><a href="contact">登录</a></li>
+						</ul>
+					</div><!-- /navbar-collapse -->
+				</nav>
+			</div>
+		</div>
+	</div>
+<!-- //header -->
+<!-- menuseries-->
+	<div class="menuche">
+		<div class="container">
+			<h3 class="menuseries-title">
+				<span class="menuseries-name" th:text="${mealseries.seriesname}">鲁系</span>
+				<span class="menuseries-des">全部菜品</span>
+			</h3>
+			<div class="menu2-left" id="clickmenu" th:id="${meal.mealid}" onclick="clickmenu(mealid)" th:each="meal:${meals}"
+				 th:onclick="'javascript:clickmenu('+${meal.mealid}+')'">
+				<span class="co1-1">
+					<a href="#">
+						<img th:src="${meal.mealimage}" src="images/01.jpg" alt="雪梨肉肘棒图片"/>
+					</a>
+				</span>
+				<div class="col-2">
+					<h3 class="menuname" th:text="${meal.mealname}">雪梨肉肘棒</h3>
+					<p class="menusum" th:text="${meal.mealsummarize}">味鲜香甜咸，肘棒不腻</p>
+					<p class="menucount">
+						月销<span th:text="${meal.mealsales}">34</span>份
+					</p>
+				</div>
+				<span class="col-3">
+					<span class="menuprice">￥</span>
+					<span class="menuprice" th:text="${meal.mealprice}">10.00</span>
+				</span>
+				<span class="col-4">
+					<div class="shop-car">
+						<button class="shop-carbutton" th:onclick="'javascript:gocar('+${meal.mealid}+')'">
+							加入购物车
+						</button>
+					</div>
+				</span>
+			</div>
+			<!--<div class="menu2-left">
+				<span class="co1-1">
+					<a href="#">
+						<img src="images/02.jpg" alt="素锅烤鸭肉图片"/>
+					</a>
+				</span>
+				<div class="col-2">
+					<h3 class="menuname">素锅烤鸭肉</h3>
+					<p class="menusum">颜色鲜艳，酷似鸭肉，鲜香不腻。</p>
+					<p class="menucount">
+						月销<span>20</span>份
+					</p>
+				</div>
+				<span class="col-3">
+					<span class="menuprice">￥</span>
+					<span class="menuprice">20.00</span>
+				</span>
+				<span class="col-4">
+					<div class="shop-car">
+						<button class="shop-carbutton">
+							加入购物车
+						</button>
+					</div>
+				</span>
+			</div>
+			<div class="menu2-left">
+				<span class="co1-1">
+					<a href="#">
+						<img src="images/03.jpg" alt="烤花肉揽桂鱼图片"/>
+					</a>
+				</span>
+				<div class="col-2">
+					<h3 class="menuname">烤花肉揽桂鱼</h3>
+					<p class="menusum">味道特鲜，白中泛红，佐以姜末、香醋，尤胜一等。</p>
+					<p class="menucount">
+						月销<span>50</span>份
+					</p>
+				</div>
+				<span class="col-3">
+					<span class="menuprice">￥</span>
+					<span class="menuprice">15.00</span>
+				</span>
+				<span class="col-4">
+					<div class="shop-car">
+						<button class="shop-carbutton">
+							加入购物车
+						</button>
+					</div>
+				</span>
+			</div>
+			<div class="menu2-left">
+				<span class="co1-1">
+					<a href="#">
+						<img src="images/04.jpg" alt="泰安肉三美豆腐图片"/>
+					</a>
+				</span>
+				<div class="col-2">
+					<h3 class="menuname">泰安肉三美豆腐</h3>
+					<p class="menusum">汤汁乳白而鲜，豆腐软滑，白菜鲜嫩，清淡爽口。</p>
+					<p class="menucount">
+						月销<span>78</span>份
+					</p>
+				</div>
+				<span class="col-3">
+					<span class="menuprice">￥</span>
+					<span class="menuprice">8.00</span>
+				</span>
+				<span class="col-4">
+					<div class="shop-car">
+						<button class="shop-carbutton">
+							加入购物车
+						</button>
+					</div>
+				</span>
+			</div>
+			<div class="menu2-left">
+				<span class="co1-1">
+					<a href="#">
+						<img src="images/05.jpg" alt="落叶琵琶肉虾图片"/>
+					</a>
+				</span>
+				<div class="col-2">
+					<h3 class="menuname">落叶琵琶肉虾</h3>
+					<p class="menusum">外型美观，鲜香味美。</p>
+					<p class="menucount">
+						月销<span>55</span>份
+					</p>
+				</div>
+				<span class="col-3">
+					<span class="menuprice">￥</span>
+					<span class="menuprice">14.00</span>
+				</span>
+				<span class="col-4">
+					<div class="shop-car">
+						<button class="shop-carbutton">
+							加入购物车
+						</button>
+					</div>
+				</span>
+			</div>
+			<div class="menu2-left">
+				<span class="co1-1">
+					<a href="#">
+						<img src="images/06.jpg" alt="肉冬菜肉末图片"/>
+					</a>
+				</span>
+				<div class="col-2">
+					<h3 class="menuname">肉冬菜肉末</h3>
+					<p class="menusum">味鲜香适口，下饭便菜。</p>
+					<p class="menucount">
+						月销<span>27</span>份
+					</p>
+				</div>
+				<span class="col-3">
+					<span class="menuprice">￥</span>
+					<span class="menuprice">12.00</span>
+				</span>
+				<span class="col-4">
+					<div class="shop-car">
+						<button class="shop-carbutton">
+							加入购物车
+						</button>
+					</div>
+				</span>
+			</div>
+			<div class="menu2-left">
+				<span class="co1-1">
+					<a href="#">
+						<img src="images/07.jpg" alt="糖醋红柿椒图片"/>
+					</a>
+				</span>
+				<div class="col-2">
+					<h3 class="menuname">糖醋红柿椒</h3>
+					<p class="menusum">色红美，味鲜香。</p>
+					<p class="menucount">
+						月销<span>35</span>份
+					</p>
+				</div>
+				<span class="col-3">
+					<span class="menuprice">￥</span>
+					<span class="menuprice">8.00</span>
+				</span>
+				<span class="col-4">
+					<div class="shop-car">
+						<button class="shop-carbutton">
+							加入购物车
+						</button>
+					</div>
+				</span>
+			</div>
+			<div class="menu2-left">
+				<span class="co1-1">
+					<a href="#">
+						<img src="images/11.jpg" alt="香煎茄片图片"/>
+					</a>
+				</span>
+				<div class="col-2">
+					<h3 class="menuname">香煎茄片</h3>
+					<p class="menusum">色泽红亮，口感似鱼。</p>
+					<p class="menucount">
+						月销<span>66</span>份
+					</p>
+				</div>
+				<span class="col-3">
+					<span class="menuprice">￥</span>
+					<span class="menuprice">9.00</span>
+				</span>
+				<span class="col-4">
+					<div class="shop-car">
+						<button class="shop-carbutton">
+							加入购物车
+						</button>
+					</div>
+				</span>
+			</div>
+			<div class="menu2-left">
+				<span class="co1-1">
+					<a href="#">
+						<img src="images/12.jpg" alt="金陵片皮鸭图片"/>
+					</a>
+				</span>
+				<div class="col-2">
+					<h3 class="menuname">金陵片皮鸭</h3>
+					<p class="menusum">此菜深红明亮，皮脆，肉滑，分两次上桌，滋味各异</p>
+					<p class="menucount">
+						<span class="menucount">月销<span>37</span>份</span>
+					</p>
+				</div>
+				<span class="col-3">
+					<span class="menuprice">￥</span>
+					<span class="menuprice">10.00</span>
+				</span>
+				<span class="col-4">
+					<div class="shop-car">
+						<button class="shop-carbutton">
+							加入购物车
+						</button>
+					</div>
+				</span>
+			</div>
+			<div class="menu2-left">
+				<span class="co1-1">
+					<a href="#">
+						<img src="images/20.jpg" alt="油焖大虾图片"/>
+					</a>
+				</span>
+				<div class="col-2">
+					<h3 class="menuname">油焖大虾</h3>
+					<p class="menusum">味道厚重悠长，余味缭绕，回味无穷。</p>
+					<p class="menucount">
+						月销<span>77</span>份
+					</p>
+				</div>
+				<span class="col-3">
+					<span class="menuprice">￥</span>
+					<span class="menuprice">33.00</span>
+				</span>
+				<span class="col-4">
+					<div class="shop-car">
+						<button class="shop-carbutton">
+							加入购物车
+						</button>
+					</div>
+				</span>
+			</div>-->
+		</div>
+	</div>
+<!-- //menuseries -->
+<!--- footer --->
+	<div class="footer">
+		<div class="container">
+			<div class="footer-grids">
+				<div class="col-md-3 footer-grid">
+					<h3>Extras</h3>
+					<p>Ut rutrum neque a mollis laoreet diam enim feuiat dui nec ulacoper quam felis id diam. Nunc ut tortor ligula eu petiu risus. Pelleesque conquat dignissim lacus quis altrcies.</p>
+				</div>
+				<div class="col-md-3 footer-grid">
+					<h3>Recent Posts</h3>
+					<ul>
+						<li><a href="#">Vestibulum felis</a></li>
+						<li><a href="#">Mauris at tellus</a></li>
+						<li><a href="#">Donec ut lectus</a></li>
+						<li><a href="#">vitae interdum</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 footer-grid">
+					<h3>Useful Info</h3>
+					<ul>
+						<li><a href="#">Hendrerit quam</a></li>
+						<li><a href="#">Amet consectetur </a></li>
+						<li><a href="#">Iquam hendrerit</a></li>
+						<li><a href="#">Donec ut lectus </a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 footer-grid">
+					<h3>Contact Us</h3>
+					<p>Pelleesque conquat dignissim lacus quis altrcies.</p>
+					<div class="footer-grid-address">
+						<p>Tel.800-255-9999</p>
+						<p>Fax: 1234 568</p>
+						<p>Email: <a class="email-link" href="mailto:info@example.com">Example.com</a></p>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<div class="clear"> </div>
+	<div class="copy-right">
+		<p>Copyright &copy; 2015.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="家肴">家肴小站</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+	</div>
+<!--- //footer --->
+<!-- for bootstrap working -->
+		<script src="js/bootstrap.js"> </script>
+<!-- //for bootstrap working -->
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $(".scroll").click(function(event){
+            event.preventDefault();
+            $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+        });
+    });
+    function clickmenu(mealid){
+        window.location.href="caiping"+mealid;
+    }
+    function gocar(mealid) {
+        event.stopPropagation();
+        alert(mealid);
+      $.ajax({
+		  url:"/addToCar",
+		  type:"post",
+		  data:{"mid":mealid},
+		  success:function (data) {
+			  if (data = 1){
+			  	alert("添加成功")
+			  }
+		  }
+	  })
+    }
+</script>
+</body>
+</html>

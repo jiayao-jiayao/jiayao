@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+	.button {
+      display: inline-block;
+    border-radius: 4px;
+    background-color: #012231;
+    border: none;
+    color: #2FD828;
+    text-align: center;
+    font-size: 20px;
+    /* padding: 20px; */
+    width: 150px;
+    height: 40px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    margin-left: 300px;
+    margin-top: 155px;
+    padding-top: 3px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+#bt1{
+width:100%;
+height: 211px;
+margin-bottom:10px;
+background-image:url('images/tu.jpg');
+}
+		body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=5pS6iG1Z7fG41AToj5w4I5sv2286T46a"></script>
+	<title>地址解析</title>
+</head>
+<body>
+<div id="bt1">
+<button class="button" style="vertical-align:middle" onclick="here()"><span>到这里</span></button>
+</div>
+
+	<div id="allmap"></div>
+
+</body>
+
+<script type="text/javascript" th:inline="javascript">
+
+	// 百度地图API功能
+var zhi;
+	var map = new BMap.Map("allmap");
+	var point = new BMap.Point(108.953216,34.22907);//店铺地址
+	map.centerAndZoom(point,12);
+	// 创建地址解析器实例
+	var myGeo = new BMap.Geocoder();
+	// 将地址解析结果显示在地图上,并调整地图视野
+    var dizhi=[[${dizhi}]]
+	var start = new BMap.Point(108.882528,34.22418);
+	myGeo.getPoint(dizhi,function (start) {
+		if(start){
+			map.centerAndZoom(start, 16);
+			map.addOverlay(new BMap.Marker(start));
+			zhi=start;
+		}
+	})
+	myGeo.getPoint("西安小寨", function(point){//饭店位置(起始位置)
+		if (point) {
+			map.centerAndZoom(point, 16);
+			map.addOverlay(new BMap.Marker(point));
+
+		}else{
+			alert("您选择地址没有解析到结果!");
+		}
+	}, "北京市");
+	map.centerAndZoom(new BMap.Point(116.404, 39.915), 14);
+	var driving = new BMap.DrivingRoute(map, {
+    renderOptions: {
+        map: map,
+        autoViewport: true
+    }
+	});
+
+	var end =point;
+	var myIcon = new BMap.Icon("images/tu1.jpg", new BMap.Size(50, 50), {    //小车图片
+
+		imageOffset: new BMap.Size(0, 0)    //图片的偏移量。为了是图片底部中心对准坐标点。
+	  });
+	function here(){
+	driving.search(zhi, end);
+			driving.setSearchCompleteCallback(function(){
+			var pts = driving.getResults().getPlan(0).getRoute(0).getPath();    //通过驾车实例，获得一系列点的数组
+			var paths = pts.length;    //获得有几个点
+
+			var carMk = new BMap.Marker(pts[0],{icon:myIcon});
+			map.addOverlay(carMk);
+			i=0;
+			function resetMkPoint(i){
+				carMk.setPosition(pts[i]);
+				if(i < paths){
+					setTimeout(function(){
+						i++;
+						resetMkPoint(i);
+					},100);
+				}
+			}
+			setTimeout(function(){
+				resetMkPoint(5);
+			},100)
+
+		});
+	}
+
+	setTimeout(function(){
+		run();
+	},3000);
+
+	map.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用
+	map.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用
+</script>
+</html>

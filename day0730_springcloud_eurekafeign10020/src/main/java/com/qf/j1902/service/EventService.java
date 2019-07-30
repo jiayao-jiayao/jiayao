@@ -3,6 +3,7 @@ package com.qf.j1902.service;
 import com.qf.j1902.pojo.Event;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -17,4 +18,7 @@ public interface EventService {
     @RequestMapping("event-client/eventList")
     public List<Event> eventList(@RequestParam(value="page",defaultValue = "1") Integer page,
                                  @RequestParam(value="size",defaultValue = "3") Integer pageSize);
+
+    @RequestMapping("event-client/acdetal{id}")
+    public Event acdetal(@PathVariable("id") Integer id);
 }

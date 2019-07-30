@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>Single</title>
 <!-- for-mobile-apps -->
@@ -67,25 +67,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- single -->
 	<div class="single">
 	<div class="container">
-		<h3 align="center">青年人向建党98周年光辉岁月致敬</h3>
-		<h5 align="center">2019-06-30</h5>
+		<h3 align="center" th:text="${event.eventTitle}">青年人向建党98周年光辉岁月致敬</h3>
+		<h5 align="center"><a th:text="${event.startTime}">2019-06-30</a>--<a th:text="${event.endTime}">2019-06-30</a></h5>
 		<div class="blog-page-grids">
 		</div>
 		<div class="single-left">
-			<img src="images/4.jpg" alt=" " class="img-responsive" />
+			<img src="" th:src="${event.eventPhoto}" class="img-responsive" />
 		</div>
 		<div class="single-right">
-			<p>“销售初期1-5天全价销售，5-10天降价25%,10-15天降价50%，15-20天降价75%”这个自动降价促销方案是由美国爱德华法宁的商人发明。表面上看似“冒险”的方案，但因为抓住了顾客的心里，对于店铺来说，顾客是无限的，选择性也是很大的，这个顾客不来，那个顾客就会来。但对于顾客来说，选择性是唯一的，竞争是无限的。
+			<p th:text="${event.eventContect}">“销售初期1-5天全价销售，5-10天降价25%,10-15天降价50%，15-20天降价75%”这个自动降价促销方案是由美国爱德华法宁的商人发明。表面上看似“冒险”的方案，但因为抓住了顾客的心里，对于店铺来说，顾客是无限的，选择性也是很大的，这个顾客不来，那个顾客就会来。但对于顾客来说，选择性是唯一的，竞争是无限的。
 				自己不去，别人还会去，因此，最后投降的肯定就是顾客。</p>
 		</div>
 		<div class="clearfix"> </div>
-		<p class="tortor">“销售初期1-5天全价销售，5-10天降价25%,10-15天降价50%，15-20天降价75%”这个自动降价促销方案是由美国爱德华法宁的商人发明。
-			表面上看似“冒险”的方案，但因为抓住了顾客的心里，对于店铺来说，顾客是无限的，选择性也是很大的，这个顾客不来，那个顾客就会来。但对于顾客来说，选择性是唯一的，竞争是无限的。
-			自己不去，别人还会去，因此，最后投降的肯定就是顾客。</p>
+
 		<div class="face-twi">
-			<a>返回列表</a>
+			<a href="/active">返回列表</a>
 		</div>
-			<div class="clearfix"> </div>
+
 		</div>
 
 	</div>

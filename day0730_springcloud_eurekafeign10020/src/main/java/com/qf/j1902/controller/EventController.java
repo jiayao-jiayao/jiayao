@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 
@@ -32,7 +33,13 @@ public class EventController {
 
     @RequestMapping("/acdetal{id}")
     public String acdetal(@PathVariable("id") Integer id,Model model){
-
+        System.out.println(id);
+        Event event = eventService.acdetal(id);
+        System.out.println(event);
+        model.addAttribute("event",event);
         return "acdetal";
     }
+
+
+
 }

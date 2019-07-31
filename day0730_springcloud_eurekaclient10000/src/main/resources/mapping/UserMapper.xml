@@ -2,38 +2,33 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.qf.zk.mapper.UserMapper">
-   <resultMap id="userMap" type="com.qf.j1902.pojo.User">
-       <id   property="id" column="id"/>
-       <result property="loginName" column="loginName"/>
-       <result property="loginPwd" column="loginPwd"/>
-       <result property="trueName" column="trueName"/>
-       <result property="phone" column="phone"/>
-       <result property="address" column="address"/>
-       <result property="status" column="status"/>
-       <result property="head" column="head"/>
-   </resultMap>
+<mapper namespace="com.qf.j1902.mapper.UserMapper">
+    <resultMap id="userMap" type="com.qf.j1902.pojo.User">
+        <id   property="id" column="id"/>
+        <result property="loginName" column="loginName"/>
+        <result property="loginPwd" column="loginPwd"/>
+        <result property="trueName" column="trueName"/>
+        <result property="phone" column="phone"/>
+        <result property="address" column="address"/>
+        <result property="status" column="status"/>
+        <result property="head" column="head"/>
+    </resultMap>
     <sql id="user_columns">
         id,
-   loginName,
-   loginPwd,
-    trueName,
-    phone,
-    address,
-    status,
-   head
+        loginName,
+        loginPwd,
+        trueName,
+        phone,
+        address,
+        status,
+        head
     </sql>
-
-
-    <select id="getUsersByName"  parameterType="string"  resultMap="userMap">
+    <select id="getUsersByName" parameterType="string" resultMap="userMap">
         select
         <include refid="user_columns"/>
         from USERS
-         where
+        where
         loginName = #{loginName}
-    </select>
-    <select id="getUsers" resultMap="userMap">
-        select * from  USERS
     </select>
     <insert id="addUser" parameterType="com.qf.j1902.pojo.User">
         INSERT  INTO USERS (loginName,loginPwd, trueName, phone,address,status, head) VALUES

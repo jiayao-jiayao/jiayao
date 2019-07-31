@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<title>首页</title>
 	<!-- for-mobile-apps -->
@@ -12,15 +12,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- //for-mobile-apps -->
 	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="css/mycss.css" rel="stylesheet" type="text/css" media="all" />
 	<!-- js -->
 	<script src="js/jquery-1.11.1.min.js"></script>
-	<!--<script src="js/bootstrap.js"></script>-->
-	<script src="js/mylogin.js"></script>
 	<!-- //js -->
 	<!-- start-smoth-scrolling -->
-	<!--<script type="text/javascript" src="js/move-top.js"></script>-->
-	<!--<script type="text/javascript" src="js/easing.js"></script>-->
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function($) {
 			$(".scroll").click(function(event){
@@ -30,17 +27,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		});
 	</script>
 	<!-- start-smoth-scrolling -->
-	<!--<link href='http://fonts.useso.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>-->
+	<link href='http://fonts.useso.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
 </head>
 <style type="text/css">
-
-	.navbar{
-		/*margin-bottom: -10px;*/
-	}
-	#myppt{
-		margin-top: -20px;
-
-	}
 	.back{
 		background: #fbd138e0;
 	}
@@ -118,7 +107,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	}
 	#imgss {
 		margin-right: -30px;
-
 	}
 </style>
 <body>
@@ -139,7 +127,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<span class="icon-bar"></span>
 					</button>
 					<a class="navbar-brand" href="index.html"><i class="glyphicon glyphicon-cutlery" aria-hidden="true"></i><span>家</span>肴</a>
-					<label style="color: #1bfe04;padding-top: 20%" >嗨！游客</label>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
@@ -149,80 +136,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li class="hvr-bounce-to-bottom"><a href="menu">菜系</a></li>
 						<li class="hvr-bounce-to-bottom"><a href="diandan">我的订单</a></li>
 						<li class="hvr-bounce-to-bottom"><a href="active">活动</a></li>
-						<!--<li class="hvr-bounce-to-bottom">-->
-							<!--&lt;!&ndash;<a href="contact" >登录</a>&ndash;&gt;-->
-							<!--<a data-toggle="modal" data-target="#login" href="">登录</a>-->
-						<!--</li>-->
-						<li class="hvr-bounce-to-bottom">
-							<a data-toggle="modal" data-target="#login" href="">登录</a>
-						</li>
+						<li class="hvr-bounce-to-bottom"><a th:text="${username}" id="aa">登录</a></li>
 					</ul>
 				</div><!-- /navbar-collapse -->
 			</nav>
 		</div>
 	</div>
 </div>
-
 <!-- //header -->
-
-<!-- 登录窗口 -->
-<div id="login" class="modal fade">
-	<div class="modal-dialog" style="width: 400px">
-		<div class="modal-content">
-			<div id="tab" >
-
-				<div id="tab_tit">
-					<h2 class="active">登录</h2>
-					<h2 >注册</h2>
-				</div>
-				<div id="tab_con">
-					<div id="t_con_log" class="content">
-						<form class="form-group" action="userlogin">
-							<br/>
-							<label>用户名</label>
-							<input class="form-control" type="text" style="width: 95%" name="username" id="username" placeholder="Please enter user name">
-							<br/>
-
-							<label>密码</label>
-							<input class="form-control" type="password"   style="width: 95%" name="password" id="password"  placeholder="Please enter password">
-							<br/>
-							<button class="btn btn-primary" type="submit">登录</button>
-							<button class="btn btn-danger" data-dismiss="modal">取消</button>
-							<br/>
-
-						</form>
-					</div>
-					<div id="t_con_reg" >
-						<form class="form-group" action="userreg" method="post">
-							<br/>
-							<label >用户名</label>
-							<input class="form-control" type="text"   style="width: 95%"placeholder="6-15位字母或数字"/>
-							<br/>
-							<label >密码</label>
-							<input class="form-control" type="password" style="width: 95%" placeholder="至少6位字母或数字"/>
-							<br/>
-							<label >手机号</label>
-							<input id="phone" class="form-control" type="text"  style="width: 95%" placeholder="请输入手机号 "/>
-							<button id="btnyzm" type="button" >点击获取验证码</button>
-							<br/>
-							<label >验证码</label>
-							<input class="form-control" type="password"  style="width: 95%" placeholder="请输入验证码 "/>
-							<h5 id="yanzheng"style="display:none">验证码错误</h5>
-							<br/>
-							<!--<label >真实姓名</label>-->
-							<!--<input class="form-control" type="text"  style="width: 95%" placeholder="请输入真实姓名"/>-->
-							<br/>
-							<button class="btn btn-primary" type="submit">提交</button>
-							<button class="btn btn-danger" data-dismiss="modal">取消</button>
-							<br/>
-
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
 <!-- banner -->
 <div class="banner">
 	<!-- Slider-starts-Here -->
@@ -246,36 +167,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			});
 
 		});
-	</script>
-	<script>
-        $(function () {
-            var Num = 60;
-            function getNumber() {
-                var timer= setInterval(function () {
-                    $("#btnyzm").attr("disabled", "disabled");
-                    $("#btnyzm").text(Num + "秒后重新获取");
-                    if (Num > 0) {  Num--;} else {
-                        $("#btnyzm").attr("disabled", false);
-                        $("#btnyzm").text("点击获取验证码");
-                        Num = 60;
-                        clearInterval(timer);
-                    }
-                }, 1000);
-
-            };
-            $("#btnyzm").click(function () {
-                getNumber();
-                var phone= document.getElementById("phone");
-                $.ajax({
-					url: "reg2",
-					data:"phone",
-					type:"post",
-					error: function () {
-                        document.getElementById("yanzheng").style.display="inline";
-                    }
-				})
-            })
-        })
 	</script>
 	<!--//End-slider-script -->
 	<div  id="top" class="callbacks_container">
@@ -564,6 +455,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	function gotoGo(){
 		window.location.href="gouwuche";
 	}
+	window.onload=myfun;
+	function myfun() {
+		var aa = document.getElementById("aa");
+		var aatext=aa.innerText;
+		alert(aatext);
+		if(aatext = null || aatext == ""  || aatext=="登录"){
+            aa.innerText = "登录";
+            aa.onclick=function () {
+                window.location.href="login";
+            }
+		}
+    }
+
 </script>
 </body>
 </html>

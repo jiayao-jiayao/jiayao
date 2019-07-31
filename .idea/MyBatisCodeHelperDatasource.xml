@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MyBatisCodeHelperDatasource">
+    <option name="activeDatabaseInfo">
+      <NewDatabaseInfo>
+        <option name="database" value="restrant" />
+        <option name="databaseType" value="MySql" />
+        <option name="password" value="GuoQi1202!" />
+        <option name="url" value="rm-2zeefa0w5l6z9s8jyto.mysql.rds.aliyuncs.com:3306" />
+        <option name="userName" value="iqiq" />
+      </NewDatabaseInfo>
+    </option>
+    <option name="databaseInfos">
+      <list>
+        <NewDatabaseInfo>
+          <option name="database" value="restrant" />
+          <option name="databaseType" value="MySql" />
+          <option name="password" value="GuoQi1202!" />
+          <option name="url" value="rm-2zeefa0w5l6z9s8jyto.mysql.rds.aliyuncs.com:3306" />
+          <option name="userName" value="iqiq" />
+        </NewDatabaseInfo>
+      </list>
+    </option>
+    <option name="projectProfile">
+      <ProjectProfile>
+        <option name="javaMapperPackage" value="com.qf.j1902.mapper" />
+        <option name="javaMapperPath" value="$PROJECT_DIR$/j1902_pojo/src/main/java" />
+        <option name="javaModelPackage" value="com.qf.j1902.pojo" />
+        <option name="javaModelPath" value="$PROJECT_DIR$/j1902_pojo/src/main/java" />
+        <option name="lastDatabaseCrudChooseModuleName" value="j1902_pojo" />
+        <option name="moduleNameToPackageAndPathMap">
+          <map>
+            <entry key="j1902_pojo">
+              <value>
+                <UserPackageAndPathInfoByModule>
+                  <option name="javaMapperPackage" value="com.qf.j1902.mapper" />
+                  <option name="javaMapperPath" value="$PROJECT_DIR$/j1902_pojo/src/main/java" />
+                  <option name="javaModelPacakge" value="com.qf.j1902.pojo" />
+                  <option name="javaModelPath" value="$PROJECT_DIR$/j1902_pojo/src/main/java" />
+                  <option name="xmlPackage" value="mapping" />
+                  <option name="xmlPath" value="mapping" />
+                </UserPackageAndPathInfoByModule>
+              </value>
+            </entry>
+          </map>
+        </option>
+        <option name="tableGenerateConfigs">
+          <map>
+            <entry key="restrant:users">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="Id" />
+                  <option name="javaModelName" value="Users" />
+                  <option name="moduleName" value="j1902_pojo" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+          </map>
+        </option>
+        <option name="xmlMapperPackage" value="mapping" />
+        <option name="xmlMapperPath" value="mapping" />
+      </ProjectProfile>
+    </option>
+  </component>
+</project>

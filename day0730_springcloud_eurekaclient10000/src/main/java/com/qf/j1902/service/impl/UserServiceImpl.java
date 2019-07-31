@@ -23,18 +23,10 @@ public class UserServiceImpl implements UserService {
         return  userMapper.getUsersByName(name);
     }
 
-    @Override
-    public ArrayList<User> getUsers() {
-        return userMapper.getUsers();
-    }
 
     @Override
     public boolean addUser(User user) {
         return userMapper.addUser(user);
     }
 
-    @Override
-    public boolean delUser(int id) {
-        return userMapper.delUser(id);
-    }
 }

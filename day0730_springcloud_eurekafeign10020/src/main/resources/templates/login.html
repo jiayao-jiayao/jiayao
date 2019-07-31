@@ -80,7 +80,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li class="hvr-bounce-to-bottom"><a href="menu">菜系</a></li>
 						<li class="hvr-bounce-to-bottom"><a href="diandan">我的订单</a></li>
 						<li class="hvr-bounce-to-bottom"><a href="active">活动</a></li>
-							<li class="hvr-bounce-to-bottom active"><a href="contact.html">登录/注册</a></li>
+							<li class="hvr-bounce-to-bottom active"><a href="contact.html">登录</a></li>
 						</ul>
 					</div><!-- /navbar-collapse -->
 				</nav>
@@ -99,17 +99,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="col-md-6 contact-top-right">
 						<div class="contact-textarea">
-							<form>
+							<form action="userlogin" method="post">
 								<!-- <div class="div1"> -->
 									<!-- <input type="text" maxlength="11" placeholder="请输入用户名或电话号码" class="input" style="width:70%; border-right: none; border-radius:0;"/> -->
 									<!-- <button class="btu">获取验证码</button> -->
 								<!-- </div> -->
 								<input type="text" placeholder="请输入用户名" name="username"/>
 								<input type="text" maxlength="6" placeholder="请输入密码" name="password"/>
-								<a href="reg.html">去注册<a/><br/>
+								<a href="/reg">去注册<a/><br/>
 								<!-- <textarea value="Message:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Message..</textarea> -->
 								<input type="submit" value="登录" >
 								<input type="reset" value="重置" >
+								</a>
 							</form>
 						</div>
 					</div>

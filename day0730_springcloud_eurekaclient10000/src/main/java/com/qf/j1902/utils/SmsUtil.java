@@ -63,18 +63,17 @@ public class SmsUtil {
         return newcode;
     }
 
-//    public static void main(String[] args) throws Exception {
-//        //验证码可以用随机生成
-//        setNewcode();
-//        String code = Integer.toString(getNewcode());
-//        System.out.println("发送的验证码为："+code);
-//        SendSmsResponse sendSms = sendSms("18829069749",code);
-//        System.out.println("短信接口返回的数据----------------");
-//        System.out.println("Code=" + sendSms.getCode());
-//        System.out.println("Message=" + sendSms.getMessage());
-//        System.out.println("RequestId=" + sendSms.getRequestId());
-//        System.out.println("BizId=" + sendSms.getBizId());
-//
-//    }
+   /*public static void main(String[] args) throws Exception {
+       //验证码可以用随机生成
+        setNewcode();
+       String code = Integer.toString(getNewcode());
+       System.out.println("发送的验证码为："+code);
+       SendSmsResponse sendSms = sendSms("18032046216",code);
+       System.out.println("短信接口返回的数据----------------");
+       System.out.println("Code=" + sendSms.getCode());
+       System.out.println("RequestId=" + sendSms.getRequestId());
+    System.out.println("BizId=" + sendSms.getBizId());
+
+  }*/
 
 }

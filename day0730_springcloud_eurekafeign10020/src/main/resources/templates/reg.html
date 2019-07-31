@@ -80,7 +80,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li class="hvr-bounce-to-bottom"><a href="menu">菜系</a></li>
 						<li class="hvr-bounce-to-bottom"><a href="diandan">我的订单</a></li>
 						<li class="hvr-bounce-to-bottom"><a href="active">活动</a></li>
-							<li class="hvr-bounce-to-bottom active"><a href="contact.html">登录/注册</a></li>
+							<li class="hvr-bounce-to-bottom active"><a href="contact.html">登录</a></li>
 						</ul>
 					</div><!-- /navbar-collapse -->
 				</nav>
@@ -99,16 +99,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="col-md-6 contact-top-right">
 						<div class="contact-textarea">
-							<form>
-								<input type="text" placeholder="用户名"/>
-								<input type="text" placeholder="密码"/>
+							<form action="userreg" method="post">
+								<input type="text" name="loginName" placeholder="用户名"/>
+								<input type="text" name="loginPwd" placeholder="密码"/>
 								
 								<div class="div1">
-									<input type="text" maxlength="11" placeholder="请输入用户名或电话号码" class="input" style="width:70%; border-right: none; border-radius:0;"/>
-									<button class="btu">获取验证码</button>
+									<input type="text" name="phoneNum" id="phone" maxlength="11" placeholder="请输入电话号码" class="input" style="width:70%; border-right: none; border-radius:0;"/>
+									<button class="btu" type="button" id="btu">获取验证码</button>
 								</div>
 
-								<input type="text" maxlength="6" placeholder="验证码"/>
+								<input type="text" maxlength="6" name="yzCode" placeholder="验证码"/>
 								<!-- <textarea value="Message:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Message..</textarea> -->
 								<input type="submit" value="提交" >
 								<input type="reset" value="重置" >
@@ -165,6 +165,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--- //footer --->
 <!-- for bootstrap working -->
 		<script src="js/bootstrap.js"> </script>
+<script type="text/javascript">
+	$("#btu").click(function () {
+		var phone = document.getElementById("phone").value;
+
+		$.ajax({
+			url: "reg2",
+			type: "POST",
+			data:{phone:phone},
+			success:function (data) {
+				alert(data);
+            }
+		})
+    })
+</script>
 <!-- //for bootstrap working -->
 </body>
 </html>

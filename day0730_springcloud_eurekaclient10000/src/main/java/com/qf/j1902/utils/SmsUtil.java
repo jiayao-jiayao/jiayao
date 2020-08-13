@@ -18,8 +18,8 @@ public class SmsUtil {
     static final String domain = "dysmsapi.aliyuncs.com";
 
     // TODO 此处需要替换成开发者自己的AK(在阿里云访问控制台寻找)
-    static final String accessKeyId = "LTAIcIoA4kxLN7JC";
-    static final String accessKeySecret = "XjcWK32Z7BIT703F4IOei61xwGeapV";
+    static final String accessKeyId = "";
+    static final String accessKeySecret = "";
     // 方法名可以自行定义
     // 参数可以自己定义随意更改，更改为你自己需要的参数即可
     // 返回值类型可以自行定义
